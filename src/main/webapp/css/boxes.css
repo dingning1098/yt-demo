@@ -1,0 +1,118 @@
+/* LOGIN
+*******************************************************************************/
+#page-login {
+	background: #f8f8f8;
+	text-align: center;
+}
+
+.login-container {
+	width: 585px;
+	margin: 170px auto;
+}
+
+.login-box {
+	background: url(../images/login_box_bg2.gif) no-repeat 0 bottom;
+	padding-bottom: 40px
+}
+
+.login-form {
+	padding: 42px 40px 0;
+	text-align: left;
+	background-position:440px 30px;
+	*background-position:440px 50px;
+}
+#logo{
+	
+}
+.login-form .input-left {
+	float: left;
+}
+
+.login-form .input-right {
+	float: right;
+}
+
+.login-form .input-box input.input-text {
+	width: 240px;
+	padding-left: 5px;
+	height: 25px;
+	line-height: 25px;
+	background: #FFF url(../images/login_input_bg.jpg) repeat-x 0 0;
+	border: 1px solid #cacaca;
+	font: bold 14px Tahoma, Geneva, sans-serif;
+	color: #868686
+}
+
+.login-form h1 {
+	margin-left:0px;
+	margin-top:2px;
+	*padding-top:6px;
+}
+
+.login-form h2 {
+	font-size: 15px;
+	width: 273px;
+	height: 33px;
+}
+
+.login-form label {
+	font-weight: bold;
+}
+
+.login-form .form-buttons {
+	margin: 12px 0 0 0;
+	clear: both;
+	text-align: right;
+}
+
+.login-form .form-buttons a {
+	color: #c7000a;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none
+}
+
+.login-form .form-buttons a:hover {
+	text-decoration: underline
+}
+
+.login-form .form-button {
+	background: url(../images/login_bottom_bg.gif) no-repeat;
+	width: 72px;
+	height: 27px;
+	border: none;
+	padding: 0;
+	line-height: 27px;
+	color: #665858
+}
+
+.login-box {
+	position: relative
+}
+
+.alertmessages {
+	
+}
+
+.alertmessages .messages li.error-msg {
+	
+}
+
+.login-box .bottom {
+	
+}
+
+.login-container .legal {
+	margin: 0;
+	padding: 8px 8px 5px 8px;
+	font-size: 11px;
+	color: #999;
+}
+
+.login-form .validation-advice {
+	margin: 3px 0 0 0;
+}
+
+.login-form .forgot-link {
+	margin: 0 17px 0 0;
+	text-align: right;
+}

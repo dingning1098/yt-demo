@@ -1,0 +1,55 @@
+/* 各项目通用的自定义的css */
+/*************************form表单定义************************************/
+form {
+	font: 12px;
+}
+
+form fieldset {
+	font-size: 100%;
+	border-color: #99BBE8;
+	border-width: 1px 0 0 0;
+	border-style: solid none none none;
+	padding: 2px;
+	margin: 0 0 0 0;
+}
+
+form fieldset legend {
+	font-size: 150%;
+	font-weight: normal;
+	color: #15428B;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+
+form fieldset ul {
+	clear: both;
+	list-style: none;
+	margin: 6;
+	padding: 0;
+}
+
+form fieldset ul li {
+	float: left;
+	margin: 2px 1px 2px 1px;
+}
+
+form fieldset ul li label {
+	width: 120px;
+	float: left;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+form fieldset ul li label em {
+	color: #ff1515;
+	font: 10pt Arial;
+}
+
+form fieldset ul li input[type=text] {
+	font: 10pt Arial;
+}
+
+.sortableColumn{
+	font-weight: bold;
+	font-style: italic;
+}

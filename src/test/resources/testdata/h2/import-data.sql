@@ -1,0 +1,157 @@
+--POST_COD很别扭，看看是否需要彻底解决一下
+alter table WORKER_RECORD_TRAIN add POST_COD varchar(10);
+
+Insert into WORKER_RECORD_TRAIN
+   (WORKER_COD, WORKER_NAM, SEX,  CORP_COD, 
+    DEPT_COD, POST_COD, IDCARD_NO,   
+     CORP_NAM,  TRAIN_DUTY_NAME, SCORE,YEAR_MON)
+ Values
+   ('663666', '张三', '1','558', 
+    '558010', '050506', '378888666699998888', 
+     '信息通信公司','其他管理人员', 15,'2014');
+Insert into WORKER_RECORD_TRAIN
+   (WORKER_COD, WORKER_NAM, SEX, CORP_COD, 
+    DEPT_COD, POST_COD, IDCARD_NO, 
+      CORP_NAM,  TRAIN_DUTY_NAME, 
+    SCORE,YEAR_MON)
+ Values
+   ('358666', '李四', '1', '558', 
+    '558010', '050506', '378888666699998686', 
+      '信息通信公司',  '副高级和中级专业技术职务', 
+    20,'2014');
+Insert into WORKER_RECORD_TRAIN
+   (WORKER_COD, WORKER_NAM, SEX,  CORP_COD, 
+    DEPT_COD, POST_COD, IDCARD_NO, 
+      CORP_NAM,  TRAIN_DUTY_NAME, 
+    SCORE,YEAR_MON)
+ Values
+   ('358158', '张张三', '1',  '558', 
+    '558010', '050506', '378888666699996666', 
+     '信息通信公司', '副高级和中级专业技术职务', 
+    20,'2014');
+COMMIT;
+
+Insert into TRAIN_AUTHORITY
+   (ID, DESCRIPTION, NAME)
+ Values
+   ('8a858796398abfcf01398acd3bc10015', '基层单位', 'BASE');
+Insert into TRAIN_AUTHORITY
+   (ID, ADD_DATE, MODIFY_DATE, DESCRIPTION, NAME)
+ Values
+   ('402881fa3f984b6b013f9dc72fad08ba', '2013-7-2 13:07:24.205000', '2013-7-2 13:07:24.205000', '申请培训计划、班级、费用的权限', 'APPLY');
+Insert into TRAIN_AUTHORITY
+   (ID, DESCRIPTION, NAME)
+ Values
+   ('8a858796396c8cab01396c91c59d0002', '管理员权限', 'ADMIN');
+Insert into TRAIN_AUTHORITY
+   (ID, MODIFY_DATE, DESCRIPTION, NAME)
+ Values
+   ('8a8587963ad4ce19013ad4d4b9e80001', '2013-4-24 7:31:27.255000', '集团处室、部门', 'UNIT');
+COMMIT;
+
+Insert into TRAIN_ROLE
+   (ID, ADD_DATE, MODIFY_DATE, NAME)
+ Values
+   ('402881fa3f984b6b013f9dca9a8508bb', '2013-7-2 13:11:08.165000', '2013-7-2 13:11:08.165000', '基层单位的子单位');
+Insert into TRAIN_ROLE
+   (ID, MODIFY_DATE, NAME)
+ Values
+   ('8a858796396c8cab01396c9240810004', '2013-7-2 13:11:28.151000', '集团处室、部门');
+Insert into TRAIN_ROLE
+   (ID, MODIFY_DATE, NAME)
+ Values
+   ('402881fa3ad9f750013ae2de7cfe001a', '2013-7-2 13:11:15.520000', '基层单位');
+Insert into TRAIN_ROLE
+   (ID, MODIFY_DATE, NAME)
+ Values
+   ('8a858796396c8cab01396c921c1d0003', '2013-7-2 13:11:20.512000', '系统管理员');
+COMMIT;
+
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('402881fa3f984b6b013f9dca9a8508bb', '8a858796398abfcf01398acd3bc10015');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('402881fa3ad9f750013ae2de7cfe001a', '8a858796398abfcf01398acd3bc10015');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('402881fa3ad9f750013ae2de7cfe001a', '402881fa3f984b6b013f9dc72fad08ba');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c921c1d0003', '8a858796398abfcf01398acd3bc10015');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c921c1d0003', '402881fa3f984b6b013f9dc72fad08ba');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c921c1d0003', '8a858796396c8cab01396c91c59d0002');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c921c1d0003', '8a8587963ad4ce19013ad4d4b9e80001');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c9240810004', '8a858796398abfcf01398acd3bc10015');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c9240810004', '402881fa3f984b6b013f9dc72fad08ba');
+Insert into TRAIN_ROLE_AUTHORITY
+   (ROLE_ID, AUTHORITY_ID)
+ Values
+   ('8a858796396c8cab01396c9240810004', '8a8587963ad4ce19013ad4d4b9e80001');
+COMMIT;
+
+Insert into TRAIN_USER
+   (ID, MODIFY_DATE, LOGIN_NAME, NAME, PASSWORD, CORP_CODE,DEPT_CODE)
+ Values
+   ('8a858796396c2ee501396c35059c0004', '2013-1-21 8:18:39.060000', 'admin', '管理员', 'admin', '558','558010');
+Insert into TRAIN_USER
+   (ID, ADD_DATE, MODIFY_DATE, LOGIN_NAME, NAME, PASSWORD, REAL_NAME, CORP_CODE,DEPT_CODE)
+ Values
+   ('8a85879d3f7fab57013f7fb03c490001', '2013-6-26 16:53:43.640000', '2013-7-25 17:32:28.296000', 'test', '测试帐号', 'test', '孙七', '558','558010');
+Insert into TRAIN_USER
+   (ID, ADD_DATE, MODIFY_DATE, LOGIN_NAME, NAME, PASSWORD, REAL_NAME, CORP_CODE,DEPT_CODE)
+ Values
+   ('8a85879d3f7fab57013f7fb03c490002', '2013-6-26 16:53:43.640000', '2013-7-25 17:32:28.296000', 'test1', '测试帐号1', 'test1', '孙八', '558','558010');
+   
+COMMIT;
+
+
+Insert into TRAIN_USER_ROLE
+   (USER_ID, ROLE_ID)
+ Values
+   ('8a85879d3f7fab57013f7fb03c490001', '402881fa3ad9f750013ae2de7cfe001a');
+Insert into TRAIN_USER_ROLE
+   (USER_ID, ROLE_ID)
+ Values
+   ('8a858796396c2ee501396c35059c0004', '8a858796396c8cab01396c921c1d0003');
+   Insert into TRAIN_USER_ROLE
+   (USER_ID, ROLE_ID)
+ Values
+   ('8a85879d3f7fab57013f7fb03c490002', '8a858796396c8cab01396c9240810004');
+COMMIT;
+
+INSERT INTO train_obj (add_date, modify_date, train_obj_code, train_obj_name, train_user_id
+	, id)
+VALUES ('2014-02-10 19:55:13.562', '2014-02-10 19:55:13.562', '001', '测试培训对象', '8a85879d3f7fab57013f7fb03c490001'
+	, '402881e9441ba55601441ba6b31a0000');
+	
+INSERT INTO train_obj_rota (add_date, modify_date, rota_name, rota_position, rota_unit_cod
+	, rota_unit_name, obj_id, worker_cod, id)
+VALUES ('2014-02-10 19:56:23.250', '2014-02-10 19:56:23.250', '张三', '', '558'
+	, '信息通信公司', '402881e9441ba55601441ba6b31a0000', '663666', '402881e9441ba55601441ba7c3520001');
+INSERT INTO train_obj_rota (add_date, modify_date, rota_name, rota_position, rota_unit_cod
+	, rota_unit_name, obj_id, worker_cod, id)
+VALUES ('2014-02-10 19:56:23.265', '2014-02-10 19:56:23.265', '李四', '', '558'
+	, '信息通信公司', '402881e9441ba55601441ba6b31a0000', '358666', '402881e9441ba55601441ba7c3610002');
+	
+
+	

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ytportsoft</groupId>
+		<artifactId>ytportsoft-j2ee</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>ytport-demo</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Ytportsoft :: Module :: DEMO</name>
+
+	<properties>
+		<maven.test.skip>false</maven.test.skip>
+		<maven.test.failure.ignore>false</maven.test.failure.ignore>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ytportsoft</groupId>
+			<artifactId>ytportsoft-springside</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>demo</finalName>
+
+		<plugins>
+			<!-- test插件, 设置內存/ClassLoader -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.14.1</version>
+				<configuration>
+					<argLine>-Xmx256M</argLine>
+					<includes>
+						<include>**/*FT.java</include>
+						<include>**/*Test.java</include>
+					</includes>
+					<useSystemClassLoader>false</useSystemClassLoader>
+				</configuration>
+			</plugin>
+			<!-- 运行integration-test的插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.14.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<!-- eclipse插件, 设定wtp版本并添加springIDE nature -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+
+			<!-- jetty插件, 设定端口与context path -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+
+					<systemProperties>
+						<systemProperty>
+							<name>spring.profiles.active</name>
+							<value>develop</value>
+						</systemProperty>
+					</systemProperties>
+					<useTestClasspath>true</useTestClasspath>
+
+					<webAppConfig>
+						<contextPath>/train</contextPath>
+					</webAppConfig>
+
+					<!--<useProvidedScope>true</useProvidedScope>-->
+					<!--<systemProperties>
+						<systemProperty>
+							<name>org.apache.jasper.compiler.disablejsr199</name>
+							<value>true</value>
+						</systemProperty>
+					</systemProperties>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

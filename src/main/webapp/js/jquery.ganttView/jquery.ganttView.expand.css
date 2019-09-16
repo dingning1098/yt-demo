@@ -1,0 +1,78 @@
+/**
+設置新增區域位置
+*/
+div.ganttview-bans{
+	margin-top:43px;
+	float:left;
+	position: absolute;
+	top:0;
+}
+
+div.ganttview-bans-container {
+	position:absolute;
+	background-color:#F00;
+	alpha(opacity=70); 
+	opacity: 0.4;
+}
+
+div.ganttview-ban {
+	height:100%;
+	width:100%;
+	color:#fff;
+	font-family:"黑体";
+	text-align:justify;
+	text-align-last:justify;
+	white-space:normal; word-break:break-all;overflow:hidden;
+}
+
+
+/**
+线定义
+*/
+div.ganttview-lines{
+	margin-top:43px;
+	float:left;
+	position: absolute;
+	top:0;
+}
+
+div.ganttview-lines-container {
+	position:absolute;
+	background-color:#F00;
+	alpha(opacity=70); 
+	opacity: 0.4;
+}
+
+div.tooltip {
+    position: relative;
+    width:auto;
+    line-height: 20px;
+    bottom: 0;
+    display: block;
+ }
+
+/* hide tooltip */
+div.tooltip span {
+    display: inline;
+    direction: ltr;
+    font-size: 10.5px;
+}
+
+/* show and style tooltip */
+div.tooltip span {
+    display: block;
+    position: absolute;
+    bottom: 2em;
+    padding: 0.2em;
+    color: #000000;
+    background: #ffffa3;
+    border: 1px solid #f1d031;
+    overflow-wrap: break-word;
+    text-align: left;
+    white-space:nowrap;
+}
+
+div.tooltip span:HOVER {
+    z-index: 9999;
+    color: red;
+}

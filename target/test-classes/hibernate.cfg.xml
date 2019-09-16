@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<!-- <property name="connection.url">jdbc:oracle:thin:@10.5.7.29:1521:TEST</property>
+		<property name="connection.username">xyl</property>
+		<property name="connection.password">xyl</property> -->
+		
+		<property name="connection.url">jdbc:oracle:thin:@128.128.0.17:1521:ora922</property>
+		<property name="connection.username">lsmis</property>
+		<property name="connection.password">ok</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- <property name="hbm2ddl.auto">create</property> -->
+		<property name="hibernate.default_schema">lsmis</property>
+		<mapping class="com.ytport.train.entity.TrainPlan"/>
+		<mapping class="com.ytport.train.entity.Ccorp"/>
+		<mapping class="com.ytport.train.entity.Cdept"/>
+		<mapping class="com.ytport.train.entity.TrainCourse"/>
+		<mapping class="com.ytport.train.entity.TrainDuty"/>
+		<mapping class="com.ytport.train.entity.TrainFee"/>
+		<mapping class="com.ytport.train.entity.TrainGrade"/>
+		<mapping class="com.ytport.train.entity.TrainLevel"/>
+		<mapping class="com.ytport.train.entity.TrainObj"/>
+		<mapping class="com.ytport.train.entity.TrainPlanRota"/>
+		<mapping class="com.ytport.train.entity.TrainPosition"/>
+		<mapping class="com.ytport.train.entity.TrainRota"/>
+		<mapping class="com.ytport.train.entity.TrainTeacher"/>
+		<mapping class="com.ytport.train.entity.TrainTeacherFee"/>
+		<mapping class="com.ytport.train.entity.WorkerRecord"/>
+		<mapping class="com.ytport.train.security.entity.User"/>
+		<mapping class="com.ytport.train.security.entity.Menu"/>
+		<mapping class="com.ytport.train.security.entity.Role"/>
+		<mapping class="com.ytport.train.security.entity.Authority"/>
+		<mapping class="com.ytport.train.entity.OperationLog"/>
+		<mapping class="com.ytport.train.entity.OperationInfo"/>
+		<mapping class="com.ytport.train.entity.BusiLevel"/>
+	</session-factory>
+</hibernate-configuration>
